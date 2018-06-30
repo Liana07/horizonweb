@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<title>Horizon Website</title>
+
+</head>
+<body>
+	<!-- ********************************************************************** -->
+	<!-- Alert Modal ********************************************************** -->
+	<!-- ********************************************************************** -->
+	<div id="alert-modal">
+		<div class="alert-modal-bd">
+			<div class="alert-bg">
+				<div class="alert-message"></div>
+				<div class="btn-modal"></div>			
+			</div>
+		</div>		
+	</div>
+	<!-- ********************************************************************** -->
+	<!-- Loading Screen ******************************************************* -->
+	<!-- ********************************************************************** -->
+	<div id="loading-screen">
+		<div class="loading-screen-bd">
+			<object id="loader-svg" data="img/loader-animation.svg" type="image/svg+xml"></object>						
+		</div>		
+	</div>
+	<!-- ********************************************************************** -->
+	<!-- User Feddback message ************************************************ -->
+	<!-- ********************************************************************** -->
+	<div id="user-message">
+		<div class="user-message-bd">
+			
+			<div class="user-message">
+				<h2><div class="fa fa-info-circle fa-fw error"></div></h2>
+				<h3 id="lblMessage"></h3>
+			</div>
+			<!-- <div class="btn-modal"></div>	 -->		
+			
+		</div>		
+	</div>
+
+	<!-- ********************************************************************** -->
+	<!-- Login Window ********************************************************* -->
+	<!-- ********************************************************************** -->
+	<div id="wdw-login">
+		<div class="login-bd">
+			<form id="frm-login" class="frm">
+				<div class="frm-bd">
+					<h2 class="lbl-form">Log in</h2>	
+					<div class="input-bd">
+						<button class="btn btn-two-primary-color btn-facebook">Log in with facebook<div class="fa fa-facebook-square fa-fw"></div></button>
+						<h3>or log in with e-mail</h3>
+						<div id="log-in-error" class="lbl-login-fail"><h3 class="error">Sorry - log in failed</h3></div>
+						<input id="txt-email" class="input login-input" type="text" name="txt-email" placeholder="Your e-mail">
+						<label id="lbl-username-error" class="lbl-error"><h4 class="error">Please enter your username or e-mail</h4></label>
+						<input id="txt-password" class="input login-input" type="password" name="txt-password" placeholder="Your Password">
+						<label id="lbl-password-error" class="lbl-error"><h4 class="error">Please enter your password</h4></label>
+						<div class="login-btn-bd">
+							<div class="remember">
+								<input class="checkbox" type="checkbox" name="" value="">
+								<h3>Remember me</h3>
+							</div>									
+							<button id="btn-login" class="btn btn-one-primary-color" data-go-to="wdw-profile-page">Log in</button>
+						</div>
+					</div>
+					<div class="signup-info">
+						<h4 class="txt-link link">Forgot your username or password?</h4>
+						<h3>Don't have an account? <span class="txt-link link">Sign Up</span></h3>
+					</div>						
+				</div>
+			</form>			
+		</div>
+	</div>
+	<header>
+		<div class="header-bd">
+			<div id="logo">
+				<div id="logo-link" class="link" data-go-to="wdw-homepage"></div>
+				<object id="logo-header" data="img/logo-header.svg" type="image/svg+xml"></object>
+			</div>
+
+			<nav>	
+				<ul>
+					<li class="link-dashboard mobile-dashboard" data-go-to="admin-add-event"><h3>Create Event&nbsp;<div class="fa fa-calendar-plus-o"></div></h3></li>
+					<li class="link-dashboard mobile-dashboard" data-go-to="admin-event-list"><h3>Explore Events&nbsp;<div class="fa fa-calendar"></div></h3></li>
+					<li class="link-dashboard mobile-dashboard" data-go-to=""><h3>Add Admin&nbsp;<div class="fa fa-user-plus"></div></h3></li>
+					<li class="link-dashboard mobile-dashboard" data-go-to="wdw-"><h3>Explore Admins&nbsp;<div class="fa fa-user"></div></h3></li>
+					<li class="link-dashboard mobile-dashboard" data-go-to="wdw-"><h3>Add Partner&nbsp;<div class="fa fa-plus-circle"></div></h3></li>
+					<li class="link-dashboard mobile-dashboard" data-go-to="wdw-"><h3>Explore Partners&nbsp;<div class="fa fa-link"></div></h3></li>
+					<li id="link-dashboard" class="link link-to-dashboard" data-go-to="wdw-dashboard"><h3>Dashboard</h3></li>
+					<li class="link" data-go-to="wdw-events"><h3>Events</h3></li>
+					<li class="link" data-go-to="wdw-partners"><h3>Partners</h3></li>
+					<li class="link nolink" ><h3>About Us</h3></li>
+					<li class="link nolink" ><h3>Contact</h3></li>
+					<li class="link " id="link-login"data-go-to="wdw-login"><h3>Log In</h3></li>
+					<li >
+						<img id="link-profile" class="img-circle"src="img/user.jpg">
+						<ul id="logout">
+							<li class="link" data-go-to="wdw-profile-page"><h3>My Profile</h3></li>
+							<li class="link logout" data-go-to="wdw-homepage"><h3>Log out</h3></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+
+			<div id="content-cover"></div>
+		</div>
+		<div id="menu-bars">
+			<div class="menu-bar primary-color"></div>
+			<div class="menu-bar primary-color"></div>
+			<div class="menu-bar primary-color"></div>
+		</div> 
+	</header> 
+
+	
+	<main>
+		<!-- ********************************************************************** -->
+		<!-- Homepage Window ****************************************************** -->
+		<!-- ********************************************************************** -->
+		<div id="wdw-homepage" class="wdw">
+			<div class="wdw-bd">
+				<section class="main-hero">
+					<div class="main-hero-bd">
+						<div class="main-header">
+							<h1 class="white">Horizon Events Copenhagen</h1>
+							<div class="sub-header">
+								<h2 class="white">We do proffesional tech events with high profile partners</h2>
+								<h2 class="white">Discover - Learn - Network</h2>
+							</div>
+						</div>
+
+						<div class="hero-buttons">
+							<button class="btn btn-one-highlight-color nolink" id="">Join now</button>
+							<button class="btn btn-two-highlight-color white" data-go-to="wdw-events">See Events</button>
+						</div>
+					</div>
+					<div class="frm-bg">
+						<form class="frm-search">
+							<input class="input" type="text" name="homepage-search" placeholder="What event are you looking for?">
+							<button class="btn btn-one-primary-color">Search</button>
+						</form>
+					</div>
+				</section><!-- section main banner end -->
+				<section class="section-content">
+					<div class="section-header">
+						<h1 class="heading underline">Explore upcoming events</h1>
+					</div>
+					<div class="section-cards">
+
+						<div class="card event-card link" data-go-to="wdw-event-page">
+							<div class="img-event-card">
+								<div class="img-overlay cat-webdev"></div>
+								<img class="cover img-grayscale rounded" src="img/event1.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">Copenhagen JS</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">200 DKK</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Android Development Summit</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Web Development</div>	
+							</div>		
+						</div> 
+						<div class="card event-card nolink">
+							<div class="img-event-card">
+								<div class="img-overlay cat-space"></div>
+								<img class="cover img-grayscale rounded" src="img/event-ufo.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">University of CPH</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">Free</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Anti Gravity Ingineering</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Space and UFO</div>	
+							</div>		
+						</div> 
+						<div class="card event-card nolink">
+							<div class="img-event-card">
+								<div class="img-overlay cat-games"></div>
+								<img class="cover img-grayscale rounded" src="img/event-unity.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">Unity</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">120 DKK</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Advanced Shaders in Unity 5.0</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Game Design</div>	
+							</div>		
+						</div> 
+					</div> 		
+				</section><!-- section content end -->
+				<section class="section-content">
+					<div class="section-header">
+						<h1 class="heading underline">..Or browse by category</h1>
+					</div>
+					<div class="section-cards">
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-space"></div>
+								<img class="cover rounded img-grayscale" src="img/space.jpg">
+							</div>
+							<div class="category-card-bd cat-space">
+								<div><h5>Space and UFO's</h5></div>	
+							</div>		
+						</div>
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-webdev"></div>
+								<img class="cover rounded img-grayscale" src="img/webdev.jpeg">
+							</div>
+							<div class="category-card-bd cat-webdev">
+								<div><h5 class="white">Web Development</h5></div>	
+							</div>		
+						</div>
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-ai"></div>
+								<img class="cover rounded img-grayscale" src="img/ai.jpg">
+							</div>
+							<div class="category-card-bd cat-ai">
+								<div><h5 class="white">Artificial Intelligence</h5></div>	
+							</div>		
+						</div>
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-cs"></div>
+								<img class="cover rounded img-grayscale" src="img/cs.jpg">
+							</div>
+							<div class="category-card-bd cat-cs">
+								<div><h5 class="white">Computer Science</h5></div>	
+							</div>		
+						</div>
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-games"></div>
+								<img class="cover rounded img-grayscale" src="img/gaming.jpg">
+							</div>
+							<div class="category-card-bd cat-games">
+								<div><h5 class="white">Computer Games</h5></div>	
+							</div>		
+						</div>
+						<div class="card category-card nolink">
+							<div class="img-category-card">
+								<div class="img-overlay cat-startup"></div>
+								<img class="cover rounded img-grayscale" src="img/startup.jpg">
+							</div>
+							<div class="category-card-bd cat-startup">
+								<div><h5>Tech Start Ups</h5></div>	
+							</div>		
+						</div>
+					</div>
+					<div class="btn-section">
+						<button class="btn btn-one-primary-color" data-go-to="wdw-events">See all events</button>
+					</div>
+				</section><!-- section content end -->
+
+				<section class="newsletter">
+					<div class="section-header">
+						<h1 class="heading underline white">Get our newsletter</h1>
+						<h2 class="white">Get news regarding our events, and info on our partners</h2>
+					</div> 
+					<div class="frm-newsletter-bg">
+						<form class="frm-newsletter">
+							<input class="input" type="text" name="homepage-search" placeholder="Your e-mail address">
+							<button class="btn btn-one-primary-color nolink">Sign up</button>
+						</form>
+					</div>
+				</section><!-- section newsletter end -->
+				<section class="section-content">
+					<div class="section-header">
+						<h1 class="heading underline">Our recent partners</h1>
+					</div>
+					<div class="section-cards">
+						<div class="card partner-card">
+							<div class="img-partner-card">
+								<img class="cover rounded" src="img/ibm.jpg">
+							</div>
+							<div class="partner-card-bd">
+								<div><h3 class="date">IBM Denmark</h3></div>
+							</div>		
+						</div>
+						<div class="card partner-card">
+							<div class="img-partner-card">
+								<img class="cover rounded" src="img/playdead.jpg">
+							</div>
+							<div class="partner-card-bd">
+								<div><h3 class="date">Playdead</h3></div>
+							</div>		
+						</div>
+						<div class="card partner-card">
+							<div class="img-partner-card">
+								<img class="cover rounded" src="img/cphjs.jpeg">
+							</div>
+							<div class="partner-card-bd">
+								<div><h3 class="date">Copenhagen JS</h3></div>
+							</div>		
+						</div>   
+					</div>
+					<div class="btn-section">
+						<button class="btn btn-one-primary-color link" data-go-to="wdw-partners">Partners info</button>
+					</div>
+				</section><!-- section partner cards end -->
+
+			</div>
+		</div><!-- wdw-homepage ends -->
+
+		<!-- ********************************************************************** -->
+		<!-- Events list Window *************************************************** -->
+		<!-- ********************************************************************** -->
+
+		<div id="wdw-events" class="wdw">
+			<div class="wdw-bd"> <!-- flex container -->
+				<section class="event-hero">
+					<div class="main-hero-bd">
+						<div class="center-text">
+							<h1 class="white">Events</h1>
+							<h2 class="white">Explore upcoming tech events by Horizon CPH</h2>						
+						</div>					
+					</div>
+					<div class="frm-bg">
+						<form class="frm-search">
+							<input class="input" type="text" name="homepage-search" placeholder="What event are you looking for?">
+							<button class="btn btn-one-highlight-color">Search</button>
+						</form>
+					</div>
+				</section><!-- section main banner end -->
+				
+				<section class="section-content">
+					<div class="sort-by">
+						<h3 class="date">Sort by: </h3>	<select class="sort-by-select">
+						<option value="IT 1">Upcoming</option>
+						<option value="IT 2">Lowest ticket price</option>
+						<option value="IT 3">By Category</option>
+
+					</select>
+				</div>
+				<div class="event-main">
+					<div class="calendar-sidebar">
+						<input type="text" id="eventlist_datetimepicker"/>
+					</div>
+
+					<div class="event-list">
+						<div class="date-seperator">
+							<div class="event-date-list"><h3 class="date">10 September 2017</h3></div>		
+						</div>
+						<div class="card event-card-list link" data-go-to="wdw-event-page">
+							<div class="img-event-card">
+								<div class="img-overlay cat-webdev"></div>
+								<img class="cover img-grayscale rounded" src="img/event1.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">Google</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">200 DKK</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Android Development Summit</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Tivoli Congress Center</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>10/09/17 17:00-21:00</div>
+								<div><div class="fa fa-tag fa-fw"></div>Web Development</div>		
+							</div>		
+						</div> 
+						<div class="card event-card-list nolink">
+							<div class="img-event-card">
+								<div class="img-overlay cat-space"></div>
+								<img class="cover img-grayscale rounded" src="img/event-ufo.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">University of CPH</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">Free</span></h4>
+
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Anti Gravity Ingineering</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Space and UFO</div>		
+							</div>		
+						</div>
+						<div class="card event-card-list nolink">
+							<div class="img-event-card">
+								<div class="img-overlay cat-space"></div>
+								<img class="cover img-grayscale rounded" src="img/event-ufo.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">University of CPH</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">Free</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Anti Gravity Ingineering</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Space and UFO</div>		
+							</div>		
+						</div>
+						<div class="date-seperator">
+							<div class="event-date-list"><h3 class="date">10 September 2017</h3></div>		
+						</div>
+						<div class="card event-card-list nolink">
+							<div class="img-event-card">
+								<div class="img-overlay cat-space"></div>
+								<img class="cover img-grayscale rounded" src="img/event-ufo.jpg">
+								<h3 class="lbl-event-partner"><span class="flag">University of CPH</span></h3>
+								<h4 class="lbl-event-price"><span class="flag">Free</span></h4>
+							</div>
+							<div class="event-card-bd">
+								<div><h3 class="date">Anti Gravity Ingineering</h3></div>
+								<div><div class="fa fa-map-marker fa-fw"></div>Address</div>
+								<div><div class="fa fa-clock-o fa-fw"></div>Time</div>
+								<div><div class="fa fa-tag fa-fw"></div>Space and UFO</div>	
+							</div>		
+						</div> 
+
+					</div>
+
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- ********************************************************************** -->
+	<!-- Single Event Page Window ********************************************* -->
+	<!-- ********************************************************************** -->
+	<div id="wdw-event-page" class="wdw">
+		<div class="wdw-bd"> <!-- flex container -->
+
+			<section class="event-hero">
+				<div class="main-hero-bd">
+					<div class="center-text">
+						<h1 class="white">Android Development Summit</h1>
+						<h2 class="white">10th September 17:00-21:00</h2>
+					</div>
+					<button id="attend_event" class="btn btn-one-highlight-color">Attend this event</button>						
+				</div>
+			</section>
+			<div class="margin"></div>
+			<section class="section-content">
+				<h3><span class="link primary-color-content"  data-go-to="wdw-events">events >> </span>android development summit</h3>
+			</section>
+			<div class="margin"></div>
+			<section class="section-content">
+				<div class="img-event-page">
+					<div class="img-overlay cat-webdev"></div>
+					<img class="cover img-grayscale rounded" src="img/event1.jpg">
+					<h3 class="lbl-event-partner"><span class="flag"><div class="fa fa-tag fa-fw"></div>Web Development</span></h3>
+					<h4 class="lbl-event-price"><span class="flag">200 DKK</span></h4>
+				</div>
+				<div class="event-main">
+					<div class="eventpage-sidebar">
+						<div class="img-event-partner">
+							<img class="cover rounded" src="img/google.jpg">
+							<h3 class="lbl-event-partner"><span class="flag">Partner for this event:</span></h3>
+							<h4 class="lbl-event-price"><span class="flag">Google Alphabet</span></h4>
+						</div>
+						<div class="practical-details">
+							<div class="map">
+								<img class="map-image" src="img/copenhagen.jpg">
+							</div>
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Share this event</h3>
+								<div class="some">
+									<h2 class="date"><div class="fa fa-facebook-square fa-fw"></div></h2>
+									<h2 class="date"><div class="fa fa-linkedin-square fa-fw"></div></h2>
+									<h2 class="date"><div class="fa fa-twitter-square fa-fw"></div></h2>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="eventpage-main">
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-map-marker fa-fw"></div>Address</h3>
+								<p>Tivoli Congress Center</p>
+								<p>Street and number</p>
+								<p>City zip</p>
+							</div>
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-clock-o fa-fw"></div>Date and Time</h3>
+								<p>10th September 2017</p>
+								<p>17:00 - 21:00</p>
+							</div>
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-ticket fa-fw"></div>Ticket info</h3>
+								<div class="ticket-info">
+									<button id="attend_event" class="btn btn-two-primary-color nolink">Buy Ticket</button>
+									<img class="credit-card" src="img/creditcards.png">
+								</div>
+							</div>
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">About this Event</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. Mauris nisl orci, suscipit viverra finibus non, rutrum id libero. Nam non eros eu nulla hendrerit aliquam eu id nibh. Morbi ante eros, sollicitudin vitae enim at, posuere sodales velit. Cras accumsan bibendum fermentum. Praesent ante elit, elementum sit amet porta sit amet, venenatis facilisis tortor. Cras egestas in ex quis posuere. Pellentesque mollis porta volutpat. Pellentesque nec lorem elementum urna tristique iaculis.
+								</p>
+
+							</div>
+
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Program and Speakers</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. Mauris nisl orci, suscipit viverra finibus non, rutrum id libero. Nam non eros eu nulla hendrerit aliquam eu id nibh. 
+								</p>
+
+							</div>
+
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Attendees</h3>
+								<div class="all-attendee">
+									<div class="attendee">
+										<img class="img-circle" src="img/user.jpg">
+										<p>Dale Cooper</p>
+									</div>
+									<div class="attendee">
+										<img class="img-circle" src="img/user.jpg">
+										<p>Hugh Person</p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- ********************************************************************** -->
+	<!-- Profile page ********************************************************* -->
+	<!-- ********************************************************************** -->
+	<div id="wdw-profile-page" class="wdw">
+		<div class="wdw-bd"> <!-- flex container -->
+
+			<section class="event-hero">
+				<div class="main-hero-bd">
+					<div class="center-text">
+						<h1 class="white">John Doe profile page</h1>
+						<h2 class="white">Admin</h2>
+					</div>						
+				</div>
+			</section>
+			<div class="margin"></div>
+			<div class="margin"></div>
+			<section class="section-content">
+				<div class="event-main">
+					<div class="eventpage-sidebar">
+						<div class="img-event-partner">
+							<img class="cover rounded" src="img/user.jpg">
+							<h3 class="lbl-event-partner"><span class="flag">John Doe</span></h3>
+							<h4 class="lbl-event-price"><span class="flag">Admin</span></h4>
+						</div>
+						<div class="margin"></div>
+						<button id="attend_event" class="btn btn-one-primary-color nolink">Change Profile image</button>
+						<div class="practical-details">
+
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h2 class="date">About You</h2>
+								<h3 class="date">Name</h3>
+								<p>John Doe</p>
+								<h3 class="date">E-mail</h3>
+								<p>johndoe@horizon.com</p>		
+							</div>
+							<div class="margin"></div>
+							<button id="attend_event" class="btn btn-one-primary-color nolink">Change password</button>
+							<div class="margin"></div>
+						</div>
+					</div>
+
+					<div class="eventpage-main">
+
+					<!-- 	<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-map-marker fa-fw"></div>Address</h3>
+								<p>Tivoli Congress Center</p>
+								<p>Street and number</p>
+								<p>City zip</p>
+							</div>
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-clock-o fa-fw"></div>Date and Time</h3>
+								<p>10th September 2017</p>
+								<p>17:00 - 21:00</p>
+							</div>
+							<div class="event-detail">
+								<h3 class="date"><div class="fa fa-ticket fa-fw"></div>Ticket info</h3>
+								<div class="ticket-info">
+									<button id="attend_event" class="btn btn-two-primary-color nolink">Buy Ticket</button>
+									<img class="credit-card" src="img/creditcards.png">
+								</div>
+							</div>
+						</div> -->
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Profile text</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. Mauris nisl orci, suscipit viverra finibus non, rutrum id libero. Nam non eros eu nulla hendrerit aliquam eu id nibh. Morbi ante eros, sollicitudin vitae enim at, posuere sodales velit. Cras accumsan bibendum fermentum. Praesent ante elit, elementum sit amet porta sit amet, venenatis facilisis tortor. Cras egestas in ex quis posuere. Pellentesque mollis porta volutpat. Pellentesque nec lorem elementum urna tristique iaculis.
+								</p>
+
+							</div>
+
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Your events Calendar</h3>
+								<h4>You don't have any upcoming events to attend</h4>
+
+							</div>
+
+						</div>
+						<div class="event-details">
+							<div class="event-detail">
+								<h3 class="date">Your Contacts</h3>
+								<div class="all-attendee">
+									<div class="attendee">
+										<img class="img-circle" src="img/user.jpg">
+										<p>Dale Cooper</p>
+									</div>
+									<div class="attendee">
+										<img class="img-circle" src="img/user.jpg">
+										<p>Hugh Person</p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- ********************************************************************** -->
+	<!-- Partners Window ****************************************************** -->
+	<!-- ********************************************************************** -->
+	<div id="wdw-partners" class="wdw">
+		<div class="wdw-bd"> <!-- flex container -->
+
+			<section class="event-hero">
+				<div class="main-hero-bd">
+					<div class="center-text">
+						<h1 class="white">Our Partners</h1>
+						<h2 class="white">Horizon events connects the tech industry with you</h2>
+					</div>
+
+				</div>
+			</section>
+			<section class="section-content">
+				<div class="partner-heading">
+					<h2>How to become a partner</h2>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. Mauris nisl orci, suscipit viverra finibus non, rutrum id libero. Nam non eros eu nulla hendrerit aliquam eu id nibh". 
+				</p>
+				<div class="contact-us">
+					<button class="btn btn-one-primary-color nolink">Contact Us</button>
+				</div>
+				<div class="margin3em"></div>
+			</section>
+			<section class="section-content">
+				<div class="partner-heading">
+					<h2>Some succes stories from our partners</h2>
+				</div>
+				<div class="testimonials">
+					<div class="testimonial">
+						<div class="partner-profile">
+							<img class="img-circle-partner" src="img/busineswoman.jpg">
+						</div>
+						<h3 class="date primary-color-content">Jessica Simpson, Senior Developer at Google</h3>
+						<div class="divider"></div>
+						<p class="italic">"(...)working with Horizon Events has been a thrill, every little detail was just perfect, one could really sense that they sacrificed all with this event, they just kept going. They did the whole thing themselves, only using sass and gulp, I'm so impressed praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. ". 
+						</p>
+					</div>
+					<div class="testimonial">
+						<div class="partner-profile">
+							<img class="img-circle-partner" src="img/partnerprofile1.jpg">		
+						</div>
+						<h3 class="date primary-color-content">George Gentlemen, Ingineer at IBM</h3>
+						<div class="divider"></div>
+						<p class="italic">"(...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor scelerisque, posuere lorem eu, venenatis nisl. Phasellus eget consequat erat. Mauris nisl orci, suscipit viverra finibus non, rutrum id libero. Nam non eros eu nulla hendrerit aliquam eu id nibh". 
+						</p>
+					</div>
+				</div>
+				<div class="margin3em"></div>
+			</section>
+			<section class="section-content">
+				<div class="section-header">
+					<h1 class="heading underline">All our Partners</h1>
+				</div>
+				<div class="section-cards">
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/ibm.jpg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">IBM Denmark</h3></div>
+						</div>		
+					</div>
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/playdead.jpg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">Playdead</h3></div>
+						</div>		
+					</div>
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/cphjs.jpeg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">Copenhagen JS</h3></div>
+						</div>		
+					</div>   
+				</div>
+				<div class="margin3em"></div>
+				<div class="section-cards">
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/google.jpg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">Google</h3></div>
+						</div>		
+					</div>
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/facebook.jpg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">Facebook</h3></div>
+						</div>		
+					</div>
+					<div class="card partner-card">
+						<div class="img-partner-card">
+							<img class="cover rounded" src="img/io-interactive.jpg">
+						</div>
+						<div class="partner-card-bd">
+							<div><h3 class="date">IO Interactive</h3></div>
+						</div>		
+					</div>   
+				</div>
+			</section><!-- section partner cards end -->
+		</div>
+	</div>
+
+	<!-- ********************************************************************** -->
+	<!-- Dashboard Window ***************************************************** -->
+	<!-- ********************************************************************** -->
+
+	<div id="wdw-dashboard" class="wdw">
+		<div class="wdw-bd"> <!-- flex container -->
+			<section class="secondary-hero">
+				<div class="main-hero-bd">
+					<h1 class="white">Admin Dashboard</h1>
+					<h2 class="white">Create and edit partners, members and events</h2>
+				</div>
+			</section><!-- section main banner end -->
+			<nav id="nav-dashboard">	
+				<ul>
+					<li class="link-dashboard" data-go-to="admin-add-event"><h3>Create Event&nbsp;<div class="fa fa-calendar-plus-o"></div></h3></li>
+					<li class="link-dashboard dashboard-current" data-go-to="admin-event-list"><h3>Explore Events&nbsp;<div class="fa fa-calendar"></div></h3></li>
+					<li class="link-dashboard nolink" data-go-to=""><h3>Add Admin&nbsp;<div class="fa fa-user-plus"></div></h3></li>
+					<li class="link-dashboard nolink" data-go-to=""><h3>Explore Admins&nbsp;<div class="fa fa-user"></div></h3></li>
+					<li class="link-dashboard nolink" data-go-to=""><h3>Add Partner&nbsp;<div class="fa fa-plus-circle"></div></h3></li>
+					<li class="link-dashboard nolink" data-go-to=""><h3>Explore Partners&nbsp;<div class="fa fa-link"></div></h3></li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- wdw-dashboard ends -->
+	<div id="admin-event-list" class="wdw-dashboard">
+		<div class="wdw-bd"> <!-- flex container -->
+			<section class="section-content">
+				<!--  event divs goes here -->
+		<!-- 		<div class="selector_event" id ="short_by">
+					<select id="select_sponsors">
+						<option id="Sponsor1">Sponsor </option>
+						<option id="Sponsor2">Topic</option>
+					</select>
+
+				</div> -->
+				<div class="sort-by">
+					<h3 class="date">Sort by: </h3>	<select class="sort-by-select">
+					<option value="IT 1">Upcoming</option>
+					<option value="IT 2">Free Seats</option>
+					<option value="IT 3">Partners</option>
+				</select>
+			</div>
+
+			<h2>Your active events</h2>
+			<div class="margin"></div>
+			<div class="tablex tablex--colored tablex--rows tablex--bordered" id="tablex_tab" data-columns="7" data-gutter="3">
+
+				<!-- Column Header -->
+				<div class="table-header tablex__item"><h3 class="date">Event Name</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Date time</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Venue</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Seats</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Sponsor</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Edit</h3></div>
+				<div class="table-header tablex__item"><h3 class="date">Delete</h3></div>
+
+				<!-- Column 1 -->
+				<div class="tablex__item tablex__item--head nolink" id="event_name" >Interface Design</div>
+				<div class="tablex__item" id="event_date">09.09.2017 11:30</div>
+				<div class="tablex__item" id="event_location">Tivoli Congress Center</div>
+				<div class="tablex__item" id="event_seats" >80 (34 Free)</div>
+				<div class="tablex__item" id="event_Sponsors">KEA</div>
+				<div class="tablex__item tablex__item--foot nolink">Edit <div class="fa fa-edit fa-fw"></div></div>
+				<div class="tablex__item tablex__item--foot-delete delete-event">Delete <div class="fa fa-trash fa-fw"></div></div>
+
+
+				<!-- Column 3 -->
+				<div class="tablex__item tablex__item--head link" data-go-to= "wdw-event-page">Android Development Summit</div>
+				<div class="tablex__item">10.09.2017</div>
+				<div class="tablex__item">Vega</div>
+				<div class="tablex__item">30 (10 Free)</div>
+				<div class="tablex__item">Google</div>
+				<div class="tablex__item tablex__item--foot nolink">Edit <div class="fa fa-edit fa-fw"></div></div>
+				<div class="tablex__item tablex__item--foot-delete delete-event">Delete <div class="fa fa-trash fa-fw"></div></div>
+			</div>
+
+
+		</section>
+	</div>	
+</div>
+<div class="margin3em"></div>
+<div id="admin-add-event" class="wdw-dashboard">
+	<div class="wdw-bd">
+		<section class="section-create">
+			<div class="create-header">
+				<h2>Follow the steps to create a new event</h2>
+			</div>					
+			<div class="displaythis" id= "create_event_first">
+				<div class= "event_step" id= "event_1">
+					<div class="step_logo" id = "step_logo" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Step 1 of 5 - General info 
+
+						</h2>
+					</div>
+					<div class="create-input">
+
+
+						<h3 class="displayheading"> 
+
+							What is your new event address? <div class="fa fa-question-circle info-hover"></div> 
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ultrices sollicitudin. Curabitur mollis nisl non dui dignissim, in ornare ipsum imperdiet. Praesent ac euismod mauris.</p></div>
+							</div>
+						</h3>
+
+
+						<div class="displaythis" id = "locationfor" >
+							<div class="create-input">
+								<input class="input" type="text" name="location" id ="venue_name" placeholder="Venue name">
+							</div>
+							<div class="create-input">
+								<input class="input" type="text" name="location" id ="address" placeholder="Address">
+							</div>
+							<div>
+								<div class="city">
+									<div class="create-input input-city">
+										<input class="input " type="text" name="city" id ="city" placeholder="city">
+									</div>
+									<div class="create-input input-zip">
+										<input class="input " type="text" name="zip" id ="zip" placeholder="zip">
+									</div>
+								</div>
+							</div>
+							<!-- <button class="btn btn-one-primary-color"  id="ok_button">OK</button> -->
+						</div>
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							What is your event name? <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<input class="input" type="text" name="name" id ="name" placeholder="Name of the event">
+
+
+
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							What will your event be about? <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<select>
+							<option value="IT 1">Web Development</option>
+							<option value="IT 2">Artificial Intelligence</option>
+							<option value="IT 3">Spacecraft</option>
+							<option value="IT 4">Computer Science</option>
+							<option value="IT 4">Game Design</option>
+							<option value="IT 4">Tech Start Up</option>
+						</select>
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							Choose a date for your Event. 
+
+						</h3>
+
+						<input class="input" id="date" placeholder="date">
+
+					</div>
+
+					<div class="create-input-small">
+
+						<h3 class="displayheading"> 
+
+							Choose a start time for your Event.
+
+						</h3>
+
+						<input class="input" id="starttime" placeholder="start time">
+
+					</div>
+					<div class="create-input-small">
+
+						<h3 class="displayheading"> 
+
+							Choose a approx end time for your Event. <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<input class="input" id="endtime" placeholder="end time">
+
+					</div>
+
+				</div>
+				<!-- <button class = "next_step"  id="save_step1">Next </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color next_step"  id="save_step1">Next</button>
+					<button class="btn btn-two-highlight-color cancel-event" id="cancel_step1">Cancel All</button>
+				</div>
+
+
+			</div>
+
+
+			<div class="displaythis" id= "create_event_second" style="display: none;" >
+				<div class= "event_step" id= "event_2">
+					<div class="step_logo" id = "step_logo2" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Step 2 of 5 - Description
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Add a short description about your event. <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<textarea id="description" cols="30" rows="5" placeholder="short description"></textarea>
+
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Add details about who should attend the event and about the event programme, speakers etc. <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div> 
+
+					</h3>
+					<textarea id="description2" placeholder="Details about event, event schedule, speakers etc."></textarea>
+
+				</div>
+				<!-- <button class = "next_step" id="save_step2"> Next </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color next_step"  id="save_step2">Next</button>
+					<button class="btn btn-two-highlight-color cancel-event" id="cancel_step2">Cancel All</button>
+				</div>
+
+
+			</div>
+
+			<div class="displaythis" id= "create_event_third" style="display: none;">
+				<div class= "event_step" id= "event_3">
+					<div class="step_logo" id = "step_logo3" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Step 3 of 5 - Practical details and Partners  
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Who is organiziang the event? <div class="fa fa-question-circle info-hover"></div>
+
+					</h3>
+					<select id="sponsors_create">
+						<option value="Sponsor1 ">KEA </option>
+						<option value=" Sponsor2 ">IBM</option>
+						<option value="Sponsor3">Google</option>
+						<option value="Sponsor4">Facebook</option>
+						<option value="Sponsor5">Microsoft</option>
+
+					</select>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						How many seats are available? <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<input class="input" type="number" name="places_no" id="places_no" placeholder="Seats available">
+
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						What is the ticket fee for the participation. ( write FREE if there is no entry fee) <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<input class="input" type="text" name="price_event" id= "price_event" placeholder="Ticket price">
+
+				</div>
+				<!-- <button class = "next_step"  id="save_step3"> Next </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color next_step"  id="save_step3">Next</button>
+					<button class="btn btn-two-highlight-color cancel-event" id="cancel_step3">Cancel All</button>
+				</div>
+
+
+			</div>
+
+			<div class="displaythis" id= "create_event_fourth" style="display: none;">
+				<div class= "event_step" id= "event_4">
+					<div class="step_logo" id = "step_logo4" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Step 4 of 5 - Profile Image 
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Choose a profile image for your event. <div class="fa fa-question-circle info-hover"></div> 
+
+					</h3> 	
+					<div>
+						<img class="img-preview" id="img-pre0" src="">
+						<input class="input" class="file" id="file-0" type="file" name="file-0">
+					</div>			
+				</div>
+
+				<!-- <button class = "next_step"  id="save_step4"> Next </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color next_step"  id="save_step4">Next</button>
+					<button class="btn btn-two-highlight-color cancel-event" id="cancel_step4">Cancel All</button>
+				</div>
+
+
+			</div>
+
+			<div class="displaythis" id= "create_event_fifth" style="display: none;">
+				<div class= "event_step" id= "event_5">
+					<div class="step_logo" id = "step_logo5" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Step 5 of 5 - Add event to event list 
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Please check the information for the event you want to create.
+
+
+					</h3>
+					<p id = "final_ok">
+						You can save the event by pressing the save button. 
+
+					</p>
+					<p id = "final_ok">
+
+						The event will be saved but not published. 
+
+
+					</p>	
+					<p id = "final_ok">
+
+						You can publish the event from the list of events. 
+
+					</p>			
+				</div>
+				<!-- <button class = "save_event" id="save_final"> Save  </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color next_step"  id="save_final">Next</button>
+					<button class="btn btn-two-highlight-color cancel-event" id="cancel_final">Cancel All</button>
+				</div>
+
+
+			</div>
+
+		</section>
+	</div>
+	<div class="margin3em"></div>
+</div>
+
+<div id="admin-edit-event" class="wdw-dashboard">
+	<!-- <div id="wdw-edit-event" class="wdw"> -->
+	<div class="wdw-bd"> <!-- flex container -->
+		<section class="section-create">
+			<section class="section-content">
+				<h3><span class="link primary-color-content"  data-go-to="admin-event-list">explore events >> </span>edit event</h3>
+			</section>
+
+			<!-- <section class="section-content"> -->
+			<div class="displaythis" id= "create_event_first_">
+				<div class= "event_step" id= "event_1_">
+					<div class="step_logo" id = "step_logo_" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							General info 
+
+						</h2>
+					</div>
+					<div class="create-input">
+
+
+						<h3 class="displayheading"> 
+
+							What is your new event address? <div class="fa fa-question-circle info-hover"></div> 
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ultrices sollicitudin. Curabitur mollis nisl non dui dignissim, in ornare ipsum imperdiet. Praesent ac euismod mauris.</p></div>
+							</div>
+						</h3>
+
+
+						<div class="displaythis" id = "locationfor_edit" >
+							<div class="create-input">
+								<input class="input" type="text" name="location" id ="location_edit" placeholder="Venue name">
+							</div>
+							<div class="create-input">
+								<input class="input" type="text" name="location" id ="address_edit" placeholder="Address">
+							</div>
+							<div>
+								<div class="city">
+									<div class="create-input input-city">
+										<input class="input " type="text" name="city" id ="city_edit" placeholder="city">
+									</div>
+									<div class="create-input input-zip">
+										<input class="input " type="text" name="zip" id ="zip_edit" placeholder="zip">
+									</div>
+								</div>
+							</div>
+							<!-- <button class="btn btn-one-primary-color"  id="ok_button">OK</button> -->
+						</div>
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							What is your event name? <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<input class="input" type="text" name="name" id ="name_edit" placeholder="Name of the event">
+
+
+
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							What will your event be about? <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<select>
+							<option value="IT 1">Web Development</option>
+							<option value="IT 2">Artificial Intelligence</option>
+							<option value="IT 3">Spacecraft</option>
+							<option value="IT 4">Computer Science</option>
+							<option value="IT 4">Game Design</option>
+							<option value="IT 4">Tech Start Up</option>
+						</select>
+					</div>
+
+					<div class="create-input">
+
+						<h3 class="displayheading"> 
+
+							Choose a date for your Event. 
+
+						</h3>
+
+						<input class="input" id="date_edit" placeholder="date">
+
+					</div>
+
+					<div class="create-input-small">
+
+						<h3 class="displayheading"> 
+
+							Choose a start time for your Event.
+
+						</h3>
+
+						<input class="input" id="starttime_edit" placeholder="start time">
+
+					</div>
+					<div class="create-input-small">
+
+						<h3 class="displayheading"> 
+
+							Choose a approx end time for your Event. <div class="fa fa-question-circle info-hover"></div>
+							<div class="info-hover-message">
+								<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+							</div>
+
+						</h3>
+
+						<input class="input" id="endtime_edit" placeholder="end time">
+
+					</div>
+
+				</div>
+				<!-- <button class = "next_step"  id="save_step1">Next </button> -->
+
+
+
+			</div>
+
+
+			<div class="displaythis" id= "create_event_second_" >
+				<div class= "event_step" id= "event_2_">
+					<div class="step_logo" id = "step_logo2" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Description
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Add a short description about your event. <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<textarea id="description_edit" cols="30" rows="5" placeholder="short description"></textarea>
+
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Add details about who should attend the event and about the event programme, speakers etc. <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div> 
+
+					</h3>
+					<textarea id="description2_edit" placeholder="Details about event, programme, speakers etc"></textarea>
+
+				</div>
+				<!-- <button class = "next_step" id="save_step2"> Next </button> -->
+
+
+			</div>
+
+			<div class="displaythis" id= "create_event_third_">
+				<div class= "event_step" id= "event_3_">
+					<div class="step_logo" id = "step_logo3" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Practical details and Partners  
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Who is organiziang the event? <div class="fa fa-question-circle info-hover"></div>
+
+					</h3>
+					<select id="sponsors_create">
+						<option value="Sponsor1 ">KEA </option>
+						<option value=" Sponsor2 ">IBM</option>
+						<option value="Sponsor3">Google</option>
+						<option value="Sponsor4">Facebook</option>
+						<option value="Sponsor5">Microsoft</option>
+
+					</select>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						How many seats are available? <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<input class="input" type="number" name="places_no" id="places_no_edit" placeholder="Seats available">
+
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						What is the ticket fee for the participation. ( write FREE if there is no entry fee) <div class="fa fa-question-circle info-hover"></div>
+						<div class="info-hover-message">
+							<div class="info-message-hover-bd"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus auctor metus cursus posuere. Nulla rutrum scelerisque ipsum, non tincidunt purus egestas nec. Duis hendrerit ul</p></div>
+						</div>
+
+					</h3>
+					<input class="input" type="text" name="price_event" id= "price_event_edit" placeholder="Ticket price">
+
+				</div>
+				<!-- <button class = "next_step"  id="save_step3"> Next </button> -->
+
+
+			</div>
+
+			<div class="displaythis" id= "create_event_fourth_">
+				<div class= "event_step" id= "event_4_">
+					<div class="step_logo" id = "step_logo4_" >
+						<img class="step_logo" src="">
+					</div>
+					<div class="step_number">
+						<h2 class="dispaly_steps"> 
+
+							Profile Image 
+
+						</h2>
+					</div>
+				</div>
+
+				<div>
+
+
+					<h3 class="displayheading"> 
+
+						Choose a profile image for your event. <div class="fa fa-question-circle info-hover"></div> 
+
+					</h3> 	
+					<div>
+						<img class="img-preview" id="img-pre0_" src="">
+						<input class="input" class="file" id="file-0_ed" type="file" name="file-0">
+					</div>			
+				</div>
+
+				<!-- <button class = "next_step"  id="save_step4"> Next </button> -->
+				<div class="create-event-buttons">
+					<button class="btn btn-one-primary-color" id="save_edit">Save edit</button>
+					<!-- 	<button class="btn btn-two-highlight-color cancel-event" id="cancel_step4">Cancel All</button> -->
+				</div>
+
+
+			</div>
+
+
+
+<!-- 
+			<div>
+
+				<button class = "save_event link" id="save_edit" data-go-to="admin-event-list">Save</button>
+
+			</div> -->
+
+
+
+
+
+
+
+
+
+			<!-- </section> -->
+		</section>
+	</div>
+</div>
+
+<!-- </div> -->
+
+
+
+</main>
+
+<footer class="primary-color">
+	<div class="footer-bd">
+		<div id="logo_footer">
+			<object id="logo-footer" data="img/logo-footer.svg" type="image/svg+xml"></object>
+		</div>
+	</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+<script type="text/javascript" src="js-app.js"></script>
+</body>
+</html>

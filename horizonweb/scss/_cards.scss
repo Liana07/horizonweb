@@ -1,0 +1,133 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+
+.card {
+	@extend .bg-style;
+}
+.card:hover {
+	@include box-shadow(0 6px 9px rgba(0,0,0,0.16), 0 6px 9px rgba(0,0,0,0.23));
+	cursor: pointer;
+}
+/*Event card Styles*/
+.event-card{
+	@include flex(0 0 28%);
+	height: 40vh;
+}
+.event-card:hover .img-grayscale,
+.category-card:hover .img-grayscale{
+	@include grayscale(0%);
+}
+.event-card:hover .img-overlay,
+.category-card:hover .img-overlay{
+	opacity: 0.0;
+}
+.img-event-card{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 60%;
+
+}
+.img-grayscale{
+	@include grayscale(100%);
+	transition: all 1s;
+}
+.img-overlay{
+	position: absolute;
+	z-index: 2;
+	width: inherit;
+	height: 100%;
+	opacity: 0.4;
+	transition: all 1s;	
+}
+.rounded{
+	@include border-radius-all(2px, 2px, 0, 0);
+}
+.cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.event-card-bd{
+	width: 90%;
+	height: 40%;
+	margin-left: 1em;
+	@include display-flex;
+	@include flex-direction(column);
+	@include justify-content(space-around);
+	flex-wrap: wrap;
+}
+
+h3.lbl-event-partner,
+h4.lbl-event-price {
+	position: absolute;
+	z-index: 3;
+	top: 1em;
+	left: 0px;
+	margin: 0; 
+}
+
+h4.lbl-event-price {
+	top: 3.75em;
+	margin: 0; 
+}
+
+.flag {
+	color: white;
+	font-size: 1em;
+	letter-spacing: -1px;
+	background: black;
+	/* fallback color */
+	background: rgba(0, 0, 0, 0.7);
+	padding: 5px; 
+}
+
+/*Category Card Styles*/
+.category-card{
+	@include flex(0 0 14%);
+	height: 15vh;
+}
+.img-category-card{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 80%;
+}
+.category-card-bd{
+	width: 100%;
+	height: 20%;
+	text-align: center;
+	@include display-flex;
+	@include flex-direction(column);
+	@include justify-content(space-around);
+}
+
+/*Partners Card Styles*/
+.partner-card{
+	@extend .event-card;
+}
+.img-partner-card{
+	@extend .img-category-card;
+}
+.partner-card-bd{
+	@extend .category-card-bd;
+}
+@media screen and (max-width: 1200px) {
+	.event-card{
+		@include flex(0 0 32%);
+		margin-bottom: 1em;		
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.event-card{
+		@include flex(0 0 90%);
+		margin-bottom: 2em;		
+	}
+	.category-card{
+		@include flex(0 0 30%);
+		margin-bottom: 2em;
+	}
+	
+}

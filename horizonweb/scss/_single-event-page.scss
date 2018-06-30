@@ -1,0 +1,84 @@
+
+.img-event-page{
+	@extend .img-event-card;
+	height: 25vh;
+}
+.img-event-partner{
+	@extend .img-partner-card;
+	width: 98%;
+	height: 30vh;
+}
+.event-details{
+	@extend .bg-style;
+	@include display-flex;
+	@include flex-direction(column);
+	align-items: center;
+	width: 98%;
+	height: auto;
+	margin-top: 1em;
+}
+.map{
+	width: 100%;
+	height: auto;
+}
+.map-image{
+	max-width: 100%;
+	height: auto;
+}
+.event-detail{
+	width: 90%;
+	height: auto;
+	margin: 1em 0 1em 0;
+}
+.practical-details{
+	@extend .bg-style;
+	width: 98%;
+	height: auto;
+	margin-top: 1em;
+}
+.ticket-info{
+	@include display-flex;
+	@include justify-content(space-around);
+	align-items: center;
+
+}
+.credit-card{
+	width: 60%;
+	height: 60%;
+}
+.some{
+	@include display-flex;
+	@include justify-content(space-between);
+}
+.event-main{
+	margin-top: 1em;
+	height: auto;
+	width: 100%;
+	@include justify-content(space-between);
+
+}
+.margin{
+	margin-bottom: 1em;
+}
+.eventpage-sidebar{
+	@include flex(1 0 34%);
+	@include display-flex;
+	@include flex-direction(column);
+	align-items: center;
+	height: auto;
+	margin-top: 1em;
+}
+.eventpage-main{
+	@include flex(1 0 66%);
+	height: auto;
+	@include display-flex;
+	@include flex-direction(column);
+	align-items: center;
+}
+.all-attendee{
+	@include display-flex;
+}
+.attendee{
+	margin-right: 1em;
+	margin-top: 0.5em;
+}

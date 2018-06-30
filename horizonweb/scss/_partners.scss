@@ -1,0 +1,52 @@
+.testimonials{
+	height: auto;
+	@include display-flex;
+	@include justify-content(space-between); 
+}
+.testimonial{
+	@include flex(0 0 45%);
+	height: auto;
+	text-align: center;
+	@include display-flex;
+	align-items: center;
+	@include flex-direction(column);
+}
+.partner-profile{
+
+	width: 200px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	
+}
+.img-circle-partner{
+	display: inline;
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+	
+}
+.divider{
+	width: 60%;
+	margin-top: 0.5em;
+	border-top: 1px solid $primary-color;
+}
+.italic{
+	font-style: italic;
+	margin-top: 0.5em;
+}
+.partner-heading{
+	@include display-flex;
+	@include justify-content(center);
+	margin: 1em 0 1em 0;
+}
+.margin3em{
+	margin-bottom: 3em;
+}
+.contact-us{
+	@include display-flex;
+	@include justify-content(center);
+	margin-top: 1em;
+}
+

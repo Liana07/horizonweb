@@ -1,0 +1,128 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+@import "_cards.scss";
+
+.login-bd {
+	
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#wdw-login {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	z-index: 200;
+	background-color: rgba(0, 0, 0, 0.65); 
+}
+.frm-bd{
+	width: 90%;
+	margin-top: 1em;
+	@include display-flex();
+	@include flex-direction(column);
+	align-items: center;
+	@include justify-content(space-around);
+}
+#frm-login {
+	@extend .bg-style;
+	cursor: auto;
+	@include display-flex();
+	@include justify-content(center);
+	align-items: center;
+	width: 35%;
+	height: auto;
+
+}
+.login-input{
+	margin-top: 0.5em;
+}
+.input-bd{
+	margin-top: 2em;
+	width: inherit;
+	@include display-flex();
+	@include flex-direction(column);
+	align-items: center;
+	@include justify-content(space-around);
+	
+}
+.signup-info{
+	margin-bottom: 1em;
+}
+.txt-link{
+	cursor: pointer;
+}
+.login-btn-bd{
+	width: 100%;
+	margin: 1em 0 1em 0;	
+	@include display-flex();
+	@include justify-content(space-between);
+}
+.btn-facebook{
+	margin-bottom: 1em;
+}
+.remember{
+	margin-bottom: 1.5em;
+	@include display-flex();
+	align-items: center;
+	@include justify-content(space-between);
+
+}
+.lbl-error{
+	align-self: flex-start;
+	margin: 0.5em 0 0.5em 0;
+}
+.lbl-login-fail{
+	margin: 0.5em 0 0.5em 0;
+}
+#lbl-username-error{
+	display: none;
+}
+
+#lbl-password-error{
+	display: none;
+}
+#log-in-error{
+	display: none;
+	text-align: center;
+	background-color: $highlight-color;
+	width: 100%;
+	@include border-radius(2px);
+}
+h3.error{
+	margin: .25em 0 0.25em 0;
+	color: white;
+}
+.blur{
+	filter: blur(5px);
+}
+.img-circle {
+	border-radius: 50%;
+	height: 7vh;
+}
+
+#link-profile{
+	
+}
+#link-dashboard{
+	
+}
+
+
+
+@media screen and (max-width: 768px) {
+	#frm-login{
+		width: 80vw;
+	}
+
+}

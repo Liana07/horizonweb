@@ -1,0 +1,62 @@
+$primary-color: #264a80;
+$highlight-color: #e62b1e;
+$background-color: #e7e7e7;
+$white: #ffffff;
+$cat-webdev: #0b4f6c;
+$cat-ai: #01baef;
+$cat-space: #20bf55;
+$cat-cs: #757575;
+$cat-games: #7eb09b;
+$cat-startup: #dbcbd8; 
+
+
+
+.primary-color{
+	background: $primary-color;
+}
+.primary-color-content{
+	color: $primary-color;
+}
+.highlight-color{
+	background: $highlight-color;
+}
+.white{
+	color: $white;
+}
+.txt-link{
+	color: $primary-color;
+}
+.error{
+	color: $highlight-color;
+}
+.transparent{
+	background: transparent;
+}
+.cat-webdev{
+	background-color: $cat-webdev;
+}
+.cat-ai{
+	background-color: $cat-ai;
+}
+.cat-space{
+	background-color: $cat-space;
+}
+.cat-cs{
+	background-color: $cat-cs;
+}
+.cat-games{
+	background-color: $cat-games;
+}
+.cat-startup{
+	background-color: $cat-startup;
+}
+
+/*Content Width*/
+
+
+$main-width: 60vw;
+
+@media screen and (max-width: 1200px) {
+	$main-width: 100vw;
+	
+}

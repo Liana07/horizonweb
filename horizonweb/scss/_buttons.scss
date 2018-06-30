@@ -1,0 +1,51 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+.btn {
+    position: relative;
+    padding: 0 32px 0 32px;
+    height: 2.25em;   
+    font-size: 0.9rem;
+    border-radius: 50px;
+    cursor: pointer;   
+    @include transition(all 0.3s ease);
+}
+.btn-one-highlight-color{
+    color: $white;
+    background: $highlight-color;
+    border: 2px solid $highlight-color;
+}
+.btn-one-highlight-color:hover {
+    background: transparent;
+    color: $highlight-color;
+}
+.btn-one-primary-color{
+    color: $white;
+    background: $primary-color;
+    border: 2px solid $primary-color;
+}
+.btn-one-primary-color:hover {
+    @extend .btn-one-highlight-color:hover; 
+    color: $primary-color;
+}
+.btn-two-highlight-color{
+    color: $highlight-color;
+    background: transparent;
+    @extend .btn-one-highlight-color;
+}
+.btn-two-highlight-color:hover {
+    background: $highlight-color;
+    color: $white;
+}
+.btn-two-primary-color{
+    color: $primary-color;
+    background: transparent;
+    @extend .btn-one-primary-color;
+}
+.btn-two-primary-color:hover {
+    background: $primary-color;
+    color: $white;
+}
+
+
+
+

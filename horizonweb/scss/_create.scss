@@ -1,0 +1,211 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+
+.dispaly_steps{
+	text-align: center;
+	margin-bottom: 1em;
+}
+.create-header{
+	@include display-flex;
+	@include justify-content(center);
+	margin: 1em 0 1em 0;
+}
+.create-input{
+	margin-bottom: 0.5em;
+}
+.create-input-small{
+	@extend .create-input;
+	width: 40%;
+}
+.create-event-buttons{
+	width: 50%;
+	@include display-flex;
+	@include justify-content(space-between);
+	margin-top: 1.5em;
+}
+.info-hover-message{
+	@extend .bg-style;
+	position: absolute;
+	margin-left: 10em;
+	z-index: 2000;
+	display: none;
+	width: 20em;
+	min-height: 5em;
+	height: auto;
+
+}
+.info-message-hover-bd{
+	@include display-flex();
+	margin: 0.5em;
+}
+.city{
+	@include display-flex;
+	@include justify-content(space-between);
+}
+.input-city{
+	@include flex(0 0 63%);
+}
+.input-zip{
+	@include flex(0 0 35%);
+}
+/************************************************************/
+
+/* Tablex - Flexbox responsive table */
+
+/*Variables*/
+$border: solid 1px rgba(black, 0.4);
+$width: 100%;
+$gutter_unit_size: 5px;
+$primary-color_shade: #B0C4DE;
+$background-color: #e7e7e7;
+$primary-color:#264a80;
+
+
+/*Table settings*/
+.selector_event{
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.tablex {
+	display: flex;
+
+
+
+	/*Table items general settings*/
+	.tablex__item {
+		border:0;
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 100%;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
+
+	}
+/*  
+Gutter selectors generator (10 options)*/
+@for $j from 1 to 11{
+	&[data-gutter="#{$j}"]{
+		.tablex__item{
+			padding: ($gutter_unit_size * $j);
+		}
+	}
+}
+
+/* Bordered table*/
+&.tablex--bordered{
+	&.tablex--columns .tablex__item:not(.tablex__item--foot),
+	&.tablex--rows .tablex__item{
+		border-bottom: solid 1px #121212;
+	}
+}
+/*
+Colored table*/
+&.tablex--colored {
+	.tablex__item {
+		background:$background-color;
+		&.tablex__item--head{
+			background:$primary-color;
+			;
+			color: $primary-color_shade;
+		}
+		&.tablex__item--foot{
+			color: black;
+			background:$primary-color_shade;
+			transition: all 1s;
+		}
+		&.tablex__item--foot:hover{
+
+			background:$primary-color;
+
+		}
+		&.tablex__item--foot-delete{
+			color: white;
+			background:#f0817a;
+			transition: all 1s;
+			border-left: solid 1px #fff;
+
+		}
+		&.tablex__item--foot-delete:hover{
+
+			background:$highlight-color;
+
+		}
+	}
+}
+}
+
+$breakpoint: 640px;
+$width: 100%;
+$gutter_unit_size: 5px;
+
+
+@media only screen and (max-width: ($breakpoint + 1)){
+	.tablex {
+		flex-direction: column;
+		flex-wrap: no-wrap;
+		.tablex__item{
+			&.tablex__item--foot{
+				margin-bottom: 1rem;
+
+			}
+		}
+
+		// Bordered table
+		&.tablex--bordered{
+			&.tablex--rows .tablex__item.tablex__item--foot{
+				border-bottom: none;
+			}
+		}
+	}
+	.table-header{
+		display: none;
+		margin-top: 2em;
+	}
+	.tablex__item--foot-delete{
+
+		border-left: none;
+
+	}
+}
+
+// For bigger screens
+@media only screen and (min-width: $breakpoint){
+	// Flex direction and wrapping
+	.tablex {
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		// For column layouts alone
+		&.tablex--columns{
+			.tablex__item {      
+				&.tablex__item--head{border: -1; margin-top: 2em;}
+				&.tablex__item--foot{border: 1;}
+			}  
+		}
+
+		// Bordered table
+		&.tablex--bordered{
+			&.tablex--rows {
+				border-top: solid 1px #121212;
+			}
+		}
+
+		// Set different data-columns to be defined from HTML
+		@for $i from 1 to 11 {
+			&[data-columns="#{$i}"]{
+				.tablex__item{
+					flex-basis: $width/$i;
+					width: $width/$i;          
+				}
+			}
+		}
+	}
+	.tablex__item--foot-delete{
+
+		border-left: none;
+
+	}
+}

@@ -1,0 +1,30 @@
+@import "_mixins.scss";
+@import "_colors.scss";
+
+
+.input,
+select{
+	padding: 5px 10px 5px 10px;
+	height: 2.2em;
+	width: 100%;
+	font-size: 1.1rem;
+	color: #777f8d;
+	font-family: "Clear Sans";
+	border: solid 1.5px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;
+	@include border-radius(7.5px);
+}
+textarea{
+	@extend .input;
+	height: 10em;
+	overflow: hidden;
+}
+.input:focus {
+	outline: none;
+	border: solid 1px $primary-color;
+	/*box-shadow: 0 0 5px 1px #969696;*/
+	@include box-shadow(0 0 2px 1px $primary-color);
+}
+.input-error{
+	border: solid 1px $highlight-color;
+}
